@@ -36,17 +36,17 @@ int main()
 double z(const double x)
 {
     if (abs(x) >= 1)
-        return (cos(2 * x) + 1) / cos(x) + pow(sin(x), 2);
+        return (cos(2 * x) + 1) / (cos(x) + pow(sin(x), 2));
     else
     {
         double S = 0;
         int k = 0;
-        double a = 1;
+        double a = 2*x;
         S = a;
         do
         {
             k++;
-            double R = (4 * pow(x, 2)) / (2 * k + 2) * (2 * k + 3);
+            double R = (4 * pow(x, 2)) / ((2 * k) * (2 * k + 1));
             a *= R;
             S += a;
         } while (k < 6);
